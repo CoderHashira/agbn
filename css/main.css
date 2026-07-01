@@ -37,9 +37,70 @@ body {
 }
 
 /* Logo */
-.logo-container {
+/* ================================
+   LOGO
+================================ */
+
+.logo-container{
     display: flex;
     align-items: center;
+    gap: 12px;
+}
+
+.nav-logo{
+    width: 75px;
+    height: auto;
+}
+
+.logo-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    line-height: 1;
+}
+
+.logo-text h2{
+    margin: 0;
+    font-size: 1.45rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.logo-divider{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 4px 0;
+    width: 100%;
+}
+
+.logo-divider span{
+    width: 38px;
+    height: 2px;
+    background: #cca43b;
+    border-radius: 2px;
+}
+
+.logo-divider p{
+    margin: 0;
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.logo-text h4{
+    margin: 0;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    white-space: nowrap;
 }
 
 /* Navigation links */
@@ -570,6 +631,37 @@ SECTION THREE
 
 /* Tablets */
 @media (max-width: 992px){
+
+    /* ================================
+   TABLET
+================================ */
+
+@media (max-width: 992px){
+
+    .nav-logo{
+        width: 60px;
+    }
+
+    .logo-container{
+        gap: 10px;
+    }
+
+    .logo-text h2{
+        font-size: 1.2rem;
+    }
+
+    .logo-divider span{
+        width: 28px;
+    }
+
+    .logo-divider p{
+        font-size: 0.6rem;
+    }
+
+    .logo-text h4{
+        font-size: 0.55rem;
+    }
+}
 
     .card{
         flex:0 0 calc(50% - 15px);
@@ -1332,6 +1424,42 @@ PHONE
 =========================*/
 
 @media(max-width:768px){
+
+    /* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 768px){
+
+    .logo-container{
+        gap: 8px;
+    }
+
+    .nav-logo{
+        width: 48px;
+    }
+
+    .logo-text h2{
+        font-size: 1rem;
+    }
+
+    .logo-divider{
+        gap: 6px;
+    }
+
+    .logo-divider span{
+        width: 18px;
+    }
+
+    .logo-divider p{
+        font-size: 0.5rem;
+    }
+
+    .logo-text h4{
+        font-size: 0.45rem;
+        white-space: nowrap;
+    }
+}
 
     .footer-container{
 
