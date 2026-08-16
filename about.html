@@ -3,47 +3,578 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Africa & Global Business Network | AGBN</title>
+    <title>About Us - AGBN Africa Membership</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ================================ GLOBAL RESET ================================ */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #050e1a; color: #ffffff; line-height: 1.5; }
 
-     <!-- Browser Tab Logo -->
-    <link rel="icon" type="image/png" href="./images/favicon.ico">
+        /* ================================ NAVBAR ================================ */
+        .navbar-header { background-color: #0a1d37; padding: 10px 40px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); }
+        .nav-container { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; }
+        
+        .logo-container { display: flex; align-items: center; gap: 12px; }
+        .nav-logo { width: 65px; height: auto; }
+        .logo-text { display: flex; flex-direction: column; align-items: center; justify-content: center; color: #fff; text-align: center; line-height: 1; }
+        .logo-text h2 { margin: 0; font-size: 1.45rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: #cca43b; }
+        .logo-divider { display: flex; align-items: center; justify-content: center; gap: 8px; margin: 4px 0; width: 100%; }
+        .logo-divider span { width: 38px; height: 2px; background: #cca43b; border-radius: 2px; }
+        .logo-divider p { margin: 0; font-size: 0.65rem; font-weight: 700; color: #fff; letter-spacing: 1px; }
+        .logo-text h4 { margin: 0; font-size: 0.62rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; white-space: nowrap; }
 
-    <!-- Apple Devices -->
-    <link rel="apple-touch-icon" href="./images/favicon.ico">
-    <link rel="stylesheet" href="./css/main.css">
+        .nav-links { list-style: none; display: flex; align-items: center; gap: 25px; }
+        .nav-links a { text-decoration: none; color: white; font-size: 1rem; font-weight: 500; transition: 0.3s; }
+        .nav-links a:hover, .nav-links a.active { color: #cca43b; }
+        
+        .btn-join { background: #cca43b; color: #0a1d37 !important; padding: 10px 20px; border-radius: 5px; font-weight: 600; text-decoration: none; transition: 0.3s; }
+        .btn-join:hover { background: #e5b945; }
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+        .nav-toggle { display: none; }
+        .hamburger-label { display: none; cursor: pointer; flex-direction: column; gap: 6px; }
+        .hamburger-label span { width: 28px; height: 3px; background: white; border-radius: 2px; transition: 0.3s; }
+
+        /* ================================ MAIN HERO SECTION ================================ */
+        .hero-section {
+            background: linear-gradient(180deg, #050e1a 0%, #0a1d37 100%);
+            padding: 50px 20px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .header-brand {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .brand-logo-large {
+            text-align: left;
+        }
+
+        .brand-logo-large h1 {
+            font-size: 3.2rem;
+            font-weight: 900;
+            color: #cca43b;
+            letter-spacing: 2px;
+            line-height: 1;
+        }
+
+        .brand-logo-large p {
+            color: #ffffff;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+        }
+
+        .africa-map-graphic {
+            position: absolute;
+            right: 0;
+            top: -20px;
+            width: 380px;
+            opacity: 0.85;
+            pointer-events: none;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            line-height: 1.1;
+            margin-top: 10px;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+
+        .hero-subtitle-bar {
+            background: #000000;
+            color: #ffffff;
+            display: inline-block;
+            padding: 8px 25px;
+            font-size: 0.95rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin: 20px 0 30px;
+            text-transform: uppercase;
+            border-radius: 3px;
+        }
+
+        /* 4 Value Pillars */
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .pillar-card {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 12px 15px;
+            border-radius: 8px;
+        }
+
+        .pillar-icon {
+            font-size: 1.8rem;
+            color: #cca43b;
+            flex-shrink: 0;
+        }
+
+        .pillar-text h4 {
+            font-size: 0.9rem;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: 1px;
+        }
+
+        .pillar-text p {
+            font-size: 0.75rem;
+            color: #bfc8d5;
+            line-height: 1.2;
+        }
+
+        .trusted-badge {
+            border: 2px solid #cca43b;
+            border-radius: 50%;
+            width: 140px;
+            height: 140px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 10px;
+            background: radial-gradient(circle, #0a1d37 0%, #050e1a 100%);
+            box-shadow: 0 0 15px rgba(204, 164, 59, 0.2);
+        }
+
+        .trusted-badge .stars {
+            color: #cca43b;
+            font-size: 0.75rem;
+            margin-bottom: 3px;
+        }
+
+        .trusted-badge span {
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #ffffff;
+            text-transform: uppercase;
+        }
+
+        .trusted-badge strong {
+            font-size: 0.8rem;
+            color: #cca43b;
+            text-transform: uppercase;
+        }
+
+        /* Banner Tagline */
+        .action-banner {
+            background: #cca43b;
+            color: #0a1d37;
+            font-size: 1.1rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            padding: 12px;
+            text-transform: uppercase;
+            margin: 25px 0 40px;
+            border-radius: 4px;
+        }
+
+        /* ================================ PRICING TIERS ================================ */
+        .pricing-section {
+            max-width: 1200px;
+            margin: 0 auto 50px;
+            padding: 0 20px;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .price-card {
+            background: #ffffff;
+            color: #222222;
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            position: relative;
+        }
+
+        /* Tier Header Colors */
+        .tier-connect .tier-header { background: #117a41; }
+        .tier-grow .tier-header { background: #d9822b; }
+        .tier-elite .tier-header { background: #0d2a4a; }
+
+        .tier-header {
+            padding: 15px 20px;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .tier-header i { font-size: 2rem; }
+
+        .tier-title h3 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            line-height: 1.1;
+        }
+
+        .tier-title p {
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            opacity: 0.9;
+        }
+
+        /* Pricing Box */
+        .price-body {
+            padding: 25px 20px 15px;
+            text-align: center;
+            border-bottom: 2px solid #e1e4e8;
+        }
+
+        .amount-usd {
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: #0a1d37;
+        }
+
+        .amount-usd span { font-size: 1rem; font-weight: 600; color: #555; }
+
+        .amount-zar {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #444;
+            margin-top: 2px;
+        }
+
+        /* Features List */
+        .tier-subtitle {
+            font-size: 0.7rem;
+            font-weight: 800;
+            color: #0a1d37;
+            text-transform: uppercase;
+            padding: 12px 20px 5px;
+            letter-spacing: 0.5px;
+        }
+
+        .features-list {
+            list-style: none;
+            padding: 10px 20px 25px;
+            flex-grow: 1;
+        }
+
+        .features-list li {
+            font-size: 0.85rem;
+            color: #333;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            line-height: 1.3;
+            text-align: left;
+        }
+
+        .features-list li i {
+            margin-top: 2px;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .tier-connect .features-list i { color: #117a41; }
+        .tier-grow .features-list i { color: #d9822b; }
+        .tier-elite .features-list i { color: #0d2a4a; }
+
+        /* Card Footer Banner */
+        .tier-footer-banner {
+            padding: 12px 15px;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+
+        .tier-connect .tier-footer-banner { background: #117a41; }
+        .tier-grow .tier-footer-banner { background: #d9822b; }
+        .tier-elite .tier-footer-banner { background: #0d2a4a; }
+
+        .tier-footer-banner i { font-size: 1.4rem; }
+
+        /* ================================ ALL MEMBERS ENJOY ================================ */
+        .all-members-section {
+            max-width: 1200px;
+            margin: 0 auto 50px;
+            padding: 0 20px;
+        }
+
+        .section-title-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .section-title-divider span {
+            height: 1px;
+            background: rgba(204, 164, 59, 0.4);
+            flex-grow: 1;
+        }
+
+        .section-title-divider h3 {
+            color: #ffffff;
+            font-size: 1.2rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .perks-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+        }
+
+        .perk-box {
+            border: 1px solid rgba(204, 164, 59, 0.4);
+            border-radius: 8px;
+            padding: 15px 10px;
+            text-align: center;
+            background: rgba(10, 29, 55, 0.5);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .perk-box i {
+            font-size: 1.6rem;
+            color: #cca43b;
+        }
+
+        .perk-box p {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #ffffff;
+            line-height: 1.2;
+        }
+
+        /* ================================ BOTTOM CTA & FOOTER BANNER ================================ */
+        .cta-section {
+            max-width: 1200px;
+            margin: 0 auto 50px;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .cta-left {
+            flex: 1;
+        }
+
+        .cta-left h2 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #ffffff;
+            line-height: 1.1;
+        }
+
+        .cta-left h2 span { color: #cca43b; }
+
+        .cta-left p {
+            margin-top: 15px;
+            color: #bfc8d5;
+            font-size: 0.95rem;
+            max-width: 400px;
+        }
+
+        .cta-center-map {
+            flex: 1;
+            text-align: center;
+        }
+
+        .cta-center-map img {
+            max-width: 280px;
+            width: 100%;
+            filter: drop-shadow(0 0 10px rgba(204, 164, 59, 0.3));
+        }
+
+        .cta-right {
+            flex: 1;
+            text-align: right;
+        }
+
+        .cta-right h2 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #cca43b;
+            line-height: 1.1;
+        }
+
+        .cta-right p {
+            font-size: 0.85rem;
+            color: #ffffff;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin: 10px 0 20px;
+        }
+
+        .bottom-steps {
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+        }
+
+        .step-item {
+            text-align: center;
+        }
+
+        .step-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: 1px solid #cca43b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #cca43b;
+            font-size: 1.1rem;
+            margin: 0 auto 5px;
+        }
+
+        .step-item span {
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: #ffffff;
+        }
+
+        /* Yellow Sub-footer Strip */
+        .yellow-footer-strip {
+            background: #cca43b;
+            color: #0a1d37;
+            padding: 12px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+        }
+
+        .strip-left a {
+            color: #0a1d37;
+            text-decoration: none;
+            font-weight: 800;
+        }
+
+        .strip-center {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .strip-center a {
+            color: #0a1d37;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        /* ================================ FOOTER ================================ */
+        .footer { background: #081629; color: white; padding: 60px 20px 25px; }
+        .footer-container { max-width: 1200px; margin: auto; display: grid; grid-template-columns: 2fr 1fr 1fr 2fr; gap: 45px; }
+        .footer-block h5 { color: #cca43b; margin-bottom: 20px; letter-spacing: 1px; font-size: 1rem; }
+        .footer-logo { width: 130px; margin-bottom: 20px; }
+        .footer-block p { color: #bfc8d5; line-height: 1.8; font-size: 0.9rem; }
+        .footer-block ul { list-style: none; }
+        .footer-block ul li { margin-bottom: 12px; }
+        .footer-block ul li a { color: #d8d8d8; text-decoration: none; transition: 0.3s; font-size: 0.9rem; }
+        .footer-block ul li a:hover { color: #cca43b; }
+        
+        .social-icons { margin-top: 15px; display: flex; gap: 15px; flex-wrap: wrap; }
+        .social-icons a { width: 40px; height: 40px; display: flex; justify-content: center; align-items: center; border-radius: 50%; text-decoration: none; background: rgba(255, 255, 255, 0.08); color: white; font-size: 16px; transition: all 0.3s ease; }
+        .social-icons a:hover { background: #cca43b; color: #0a1d37; transform: translateY(-3px); }
+        
+        .footer hr { border: none; height: 1px; background: rgba(255, 255, 255, 0.1); margin: 40px auto 20px; max-width: 1200px; }
+        .footer-bottom { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; color: #9aa7b8; font-size: 0.85rem; }
+
+        /* ================================ RESPONSIVE MEDIA QUERIES ================================ */
+        @media screen and (max-width: 992px) {
+            .pricing-grid { grid-template-columns: 1fr; }
+            .pillars-grid { grid-template-columns: repeat(2, 1fr); }
+            .perks-grid { grid-template-columns: repeat(3, 1fr); }
+            .cta-section { flex-direction: column; text-align: center; }
+            .cta-left p { margin: 15px auto; }
+            .cta-right { text-align: center; }
+            .bottom-steps { justify-content: center; }
+            .footer-container { grid-template-columns: repeat(2, 1fr); }
+            
+            .hamburger-label { display: flex; }
+            .nav-links {
+                position: absolute; top: 100%; left: 0; width: 100%; background: #0a1d37;
+                flex-direction: column; gap: 0; max-height: 0; overflow: hidden; transition: max-height 0.4s ease-in-out;
+            }
+            .nav-links li { width: 100%; text-align: center; }
+            .nav-links a { display: block; padding: 18px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+            .nav-toggle:checked ~ .nav-links { max-height: 600px; }
+        }
+
+        @media screen and (max-width: 600px) {
+            .pillars-grid { grid-template-columns: 1fr; }
+            .perks-grid { grid-template-columns: 1fr; }
+            .hero-title { font-size: 2.2rem; }
+            .yellow-footer-strip { flex-direction: column; gap: 10px; text-align: center; }
+            .footer-container { grid-template-columns: 1fr; text-align: center; }
+            .social-icons { justify-content: center; }
+            .footer-bottom { flex-direction: column; text-align: center; }
+        }
+    </style>
 </head>
 <body>
 
-    <!-- NAVBAR -->
+    <!-- NAVBAR (Retained unchanged as requested) -->
     <header class="navbar-header">
-        <nav class="nav-container">
-
+        <div class="nav-container">
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            
             <div class="logo-container">
-
-                <!-- Logo -->
-                <img src="./images/logos.png" alt="AGBN Logo" class="nav-logo">
-
-                <!-- Logo Text -->
                 <div class="logo-text">
-
-                    <h2>AFRICA</h2>
-
+                    <h2>AGBN</h2>
                     <div class="logo-divider">
                         <span></span>
-                        <p>AND</p>
+                        <p>WORLD</p>
                         <span></span>
                     </div>
-
-                    <h4>GLOBAL BUSINESS NETWORK</h4>
-
+                    <h4>Africa & Global Business Network</h4>
                 </div>
-
             </div>
-
-            <!-- Mobile toggle -->
-            <input type="checkbox" id="nav-toggle" class="nav-toggle">
 
             <label for="nav-toggle" class="hamburger-label">
                 <span></span>
@@ -52,434 +583,318 @@
             </label>
 
             <ul class="nav-links">
-                <li><a href="./index.html" class="active">Home</a></li>
-                <li><a href="./opportunities.html">Opportunities</a></li>
-                <!--
-                <li><a href="#">Magazine</a></li>
-                -->
-                <li><a href="./about.html">About</a></li>
-                <li><a href="./events.html">Events</a></li>
-                <li><a href="./download.html">Download App</a></li>
-                <li><a href="https://forms.gle/jRorKfWYr3iCk9Wu8" class="btn-join" target="_blank">Join AGBN</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="membership.html" class="btn-join">Join Now</a></li>
             </ul>
-
-        </nav>
+        </div>
     </header>
 
     <!-- HERO SECTION -->
-    <main>
-        <section class="first-section">
-
-            <!-- Left side text -->
-            <div class="text-content">
-
-                <div class="heading">
-                    <h2>
-                        Why People Join AGBN?
-                    </h2>
-
-                    <p>
-                        Connect with business owners, discover opportunities,
-                        refer deals, earn commissions and grow across Africa.
-                    </p>
-                </div>
-
-                <div class="buttons">
-                    <button>Join AGBN</button>
-                    <button>DOWNLOAD APP</button>
-                    <button>EXPLORE OPPORTUNITIES</button>
-                </div>
-
-                <div class="stats">
-                    <p>700+ Members</p>
-                    <p>7+ Countries</p>
-                    <p>Commission Earned</p>
-                    <p>10+ Opportunities Posted</p>
-                </div>
-
-            </div>
-
-            <!-- Right side image -->
-            <div class="image-content">
-                <div class="heading">
-                    <h2>
-                        How AGBN Works?
-                    </h2>
-
-                    <p>
-                        Connect with business owners, discover opportunities,
-                        refer deals, earn commissions and grow across Africa.
-                    </p>
-                </div>
-
-                <div class="buttons">
-                    <button>Join AGBN</button>
-                    <button>DOWNLOAD APP</button>
-                    <button>EXPLORE OPPORTUNITIES</button>
-                </div>
-
-                <div class="stats">
-                    <p>700+ Members</p>
-                    <p>7+ Countries</p>
-                    <p>Commission Earned</p>
-                    <p>10+ Opportunities Posted</p>
+    <section class="hero-section">
+        <div class="hero-container">
+            <div class="header-brand">
+                <div class="brand-logo-large">
+                    <h1>AGBN</h1>
+                    <p>AFRICA & GLOBAL BUSINESS NETWORK</p>
                 </div>
             </div>
 
-        </section>
+            <h2 class="hero-title">AGBN Africa<br>Membership</h2>
+            <div class="hero-subtitle-bar">ONE NETWORK. 54 COUNTRIES. ENDLESS OPPORTUNITIES.</div>
 
-        <section class="second-section">
-
-            <div class="functionality">
-
-                <div class="heading">
-                    <h2>How It Works</h2>
-                    <p>
-                        AGBN makes it simple to connect businesses, create opportunities,
-                        and earn commissions.
-                    </p>
+            <!-- 4 Pillars -->
+            <div class="pillars-grid">
+                <div class="pillar-card">
+                    <i class="fa-solid fa-users-gear pillar-icon"></i>
+                    <div class="pillar-text">
+                        <h4>CONNECT</h4>
+                        <p>with trusted businesses across Africa</p>
+                    </div>
                 </div>
 
-                <div class="items">
-
-                    <div class="item">
-                        <div class="number">1</div>
-
-                        <h4>Discover Opportunities</h4>
-
-                        <p>
-                            Find businesses looking for clients, suppliers,
-                            investors and strategic partners.
-                        </p>
+                <div class="pillar-card">
+                    <i class="fa-solid fa-handshake pillar-icon"></i>
+                    <div class="pillar-text">
+                        <h4>GROW</h4>
+                        <p>your network and expand your reach</p>
                     </div>
-
-                    <div class="item">
-                        <div class="number">2</div>
-
-                        <h4>Refer Opportunities</h4>
-
-                        <p>
-                            Connect the right people, submit referrals,
-                            and track the progress of every deal.
-                        </p>
-                    </div>
-
-                    <div class="item">
-                        <div class="number">3</div>
-
-                        <h4>Earn Commission</h4>
-
-                        <p>
-                            Once deals are completed, receive commissions
-                            and grow your business income.
-                        </p>
-                    </div>
-
                 </div>
 
-            </div>
-
-        </section>
-        
-        <section class="section-three">
-
-            <div class="section-heading">
-                <h2>Opportunities Across Africa</h2>
-                <p>Discover business opportunities across multiple industries.</p>
-            </div>
-
-            <div class="slider">
-
-                <button class="prev">&#10094;</button>
-
-                <div class="cards" id="cards">
-
-                    <div class="card">
-                        <img src="./images/mining.jpg" alt="">
-                        <h4>MINING</h4>
-
-                        <ul>
-                            <li>Chrome</li>
-                            <li>Manganese</li>
-                            <li>Iron</li>
-                        </ul>
-
-                        <a href="#">View Opportunities →</a>
+                <div class="pillar-card">
+                    <i class="fa-solid fa-chart-line pillar-icon"></i>
+                    <div class="pillar-text">
+                        <h4>EARN</h4>
+                        <p>referrals and business opportunities</p>
                     </div>
-
-                    <div class="card">
-                        <img src="./images/medical.jpg" alt="">
-                        <h4>HEALTHCARE</h4>
-
-                        <ul>
-                            <li>Medical Products</li>
-                            <li>Distribution</li>
-                            <li>Partnerships</li>
-                        </ul>
-
-                        <a href="#">View Opportunities →</a>
-                    </div>
-
-                    <div class="card">
-                        <img src="./images/construction.jpg" alt="">
-                        <h4>CONSTRUCTION</h4>
-
-                        <ul>
-                            <li>Projects</li>
-                            <li>Suppliers</li>
-                            <li>Contracts</li>
-                        </ul>
-
-                        <a href="#">View Opportunities →</a>
-                    </div>
-
-                    <div class="card">
-                        <img src="./images/technology.jpg" alt="">
-                        <h4>TECHNOLOGY</h4>
-
-                        <ul>
-                            <li>Software</li>
-                            <li>Services</li>
-                            <li>Consulting</li>
-                        </ul>
-
-                        <a href="#">View Opportunities →</a>
-                    </div>
-
-                    <div class="card">
-                        <img src="./images/agriculture.jpg" alt="">
-                        <h4>AGRICULTURE</h4>
-
-                        <ul>
-                            <li>Export</li>
-                            <li>Processing</li>
-                            <li>Contribution</li>
-                        </ul>
-
-                        <a href="#">View Opportunities →</a>
-                    </div>
-
-                    <div class="card">
-                        <img src="./images/green_energy.jpg" alt="">
-                        <h4>GREEN ENERGY</h4>
-
-                        <ul>
-                            <li>Solar</li>
-                            <li>Wind</li>
-                            <li>Hydrogen</li>
-                        </ul>
-
-                        <a href="#">View Opportunities →</a>
-                    </div>
-
-                    <div class="card">
-                        <img src="./images/logistics.jpg" alt="">
-                        <h4>LOGISTICS</h4>
-                        <ul>
-                            <li>Transport</li>
-                            <li>Shipping</li>
-                            <li>Product Sourcing</li>
-                        </ul>
-
-                        <a href="#">View Opportunities →</a>
-                    </div>
-
-                    <div class="card">
-                        <img src="./images/finance.jpg" alt="">
-                        <h4>FINANCE & INVESTMENT</h4>
-
-                        <ul>
-                            <li>Crypto</li>
-                            <li>Investment</li>
-                            <li>Asset Management</li>
-                        </ul>
-
-                        <a href="#">View Opportunities →</a>
-                    </div>
-
-                    <div class="card">
-                        <img src="./images/prof.jpg" alt="">
-                        <h4>PROFESSIONAL SERVICES</h4>
-
-                        <ul>
-                            <li>Accounting</li>
-                            <li>Legal Services</li>
-                            <li>IT Consulting</li>
-                        </ul>
-
-                        <a href="#">View Opportunities →</a>
-                    </div>
-
-                    <div class="card">
-                        <img src="./images/manu.jpg" alt="">
-                        <h4>MANUFACTURING & PRODUCTION</h4>
-
-                        <ul>
-                            <li>Export</li>
-                            <li>Processing</li>
-                            <li>Contribution</li>
-                        </ul>
-
-                        <a href="#">View Opportunities →</a>
-                    </div>
-
                 </div>
 
-                <button class="next">&#10095;</button>
-
+                <div class="pillar-card">
+                    <i class="fa-solid fa-bullseye pillar-icon"></i>
+                    <div class="pillar-text">
+                        <h4>ACCESS</h4>
+                        <p>markets, capital and strategic partnerships</p>
+                    </div>
+                </div>
             </div>
 
-        </section>
-
-        <section class="section-four">
-
-            <div class="image-left">
-                <img src="./images/Magazine.jpeg" alt="AGBN Magazine">
+            <!-- Trusted Badge -->
+            <div class="trusted-badge">
+                <div class="stars">★ ★ ★</div>
+                <span>BUILDING AFRICA'S</span>
+                <strong>MOST TRUSTED</strong>
+                <span>BUSINESS NETWORK</span>
             </div>
 
-            <div class="sub-section-right">
+            <div class="action-banner">
+                CHOOSE THE MEMBERSHIP THAT MATCHES YOUR AMBITION
+            </div>
+        </div>
+    </section>
 
-                <span class="eyebrow">AGBN DIGITAL MAGAZINE</span>
-
-                <h2>
-                    Stories. Markets.<br>
-                    Deals. Success.
-                </h2>
-
-                <p>
-                    Your source of business insights, market trends,
-                    success stories and opportunities across Africa.
-                </p>
-
-                <div class="magazine-buttons">
-                    <button class="primary-btn">READ CURRENT EDITION</button>
-                    <button class="secondary-btn">PREVIOUS EDITIONS</button>
-                    <button class="secondary-btn">ADVERTISE WITH US</button>
+    <!-- PRICING SECTION -->
+    <section class="pricing-section">
+        <div class="pricing-grid">
+            
+            <!-- Tier 1: Africa Connect -->
+            <div class="price-card tier-connect">
+                <div class="tier-header">
+                    <i class="fa-solid fa-user-group"></i>
+                    <div class="tier-title">
+                        <h3>AFRICA CONNECT</h3>
+                        <p>FOR STARTING & GROWING BUSINESSES</p>
+                    </div>
                 </div>
 
-            </div>
-
-        </section>
-
-        <section class="section-five">
-
-            <div class="section-left">
-
-                <div class="about">
-
-                    <h4>ABOUT AGBN</h4>
-
-                    <h6>OUR MISSION</h6>
-
-                    <p>
-                        To create Africa's largest opportunity-sharing ecosystem
-                        where connections become partnerships and
-                        opportunities become income.
-                    </p>
-
-                    <h6>OUR VISION</h6>
-
-                    <p>
-                        A continent where every entrepreneur has access to
-                        opportunities, markets, and meaningful business
-                        relationships.
-                    </p>
-
-                    <button class="learn-btn">
-                        LEARN MORE ABOUT US
-                    </button>
-
+                <div class="price-body">
+                    <div class="amount-usd">$10 <span>/month</span></div>
+                    <div class="amount-zar">± R180 <span>/month</span></div>
                 </div>
 
+                <ul class="features-list">
+                    <li><i class="fa-solid fa-circle-check"></i> Directory Listing</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Access to Africa Opportunity Feed</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Access to Digital Events & Webinars</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Access to Member WhatsApp Community</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Access to Referral Opportunities</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Monthly Networking Webinar</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Business Resources & Insights</li>
+                </ul>
+
+                <div class="tier-footer-banner">
+                    <i class="fa-solid fa-globe"></i>
+                    <span>BUILD CONNECTIONS.<br>OPEN DOORS.</span>
+                </div>
             </div>
 
-            <div class="section-right">
-
-                <div class="part-one">
-
-                    <h6>READY TO GROW?</h6>
-
-                    <p>
-                        Join thousands of entrepreneurs, professionals
-                        and business leaders building opportunities
-                        across Africa.
-                    </p>
-
-                    <button class="member-btn">
-                        BECOME A MEMBER →
-                    </button>
-
-                    <button class="download-btn">
-                        DOWNLOAD THE APP
-                    </button>
-
+            <!-- Tier 2: Africa Grow -->
+            <div class="price-card tier-grow">
+                <div class="tier-header">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <div class="tier-title">
+                        <h3>AFRICA GROW</h3>
+                        <p>FOR BUSINESSES READY TO EXPAND</p>
+                    </div>
                 </div>
 
-                <div class="part-two">
-
-                    <img src="./images/mobile_app.png"
-                        alt="AGBN App">
-
+                <div class="price-body">
+                    <div class="amount-usd">$25 <span>/month</span></div>
+                    <div class="amount-zar">± R450 <span>/month</span></div>
                 </div>
 
+                <div class="tier-subtitle">EVERYTHING IN CONNECT, PLUS:</div>
+
+                <ul class="features-list">
+                    <li><i class="fa-solid fa-circle-check"></i> Featured Directory Placement</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Quarterly Business Spotlight</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Opportunity Matching</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Priority Referrals & Introductions</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Access to Country Ambassadors</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Invitations to Exclusive Roundtable Discussions</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Discounts on AGBN Programs & Trainings</li>
+                </ul>
+
+                <div class="tier-footer-banner">
+                    <i class="fa-solid fa-bullseye"></i>
+                    <span>GET NOTICED.<br>GET OPPORTUNITIES.</span>
+                </div>
             </div>
 
-        </section> 
-    </main>
+            <!-- Tier 3: Africa Elite -->
+            <div class="price-card tier-elite">
+                <div class="tier-header">
+                    <i class="fa-solid fa-gem"></i>
+                    <div class="tier-title">
+                        <h3>AFRICA ELITE</h3>
+                        <p>FOR LEADERS & GAME CHANGERS</p>
+                    </div>
+                </div>
 
-        <footer class="footer">
+                <div class="price-body">
+                    <div class="amount-usd">$75 <span>/month</span></div>
+                    <div class="amount-zar">± R1,350 <span>/month</span></div>
+                </div>
+
+                <div class="tier-subtitle">EVERYTHING IN GROW, PLUS:</div>
+
+                <ul class="features-list">
+                    <li><i class="fa-solid fa-circle-check"></i> Priority Corporate Introductions</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Funding Readiness Assessment</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Visibility to AGBN Investment Desk (ABA Investments)</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Speaker Opportunities</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Podcast Interview Feature</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Digital Magazine Feature</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Direct Access to Strategic Partners & Capital Providers</li>
+                </ul>
+
+                <div class="tier-footer-banner">
+                    <i class="fa-solid fa-crown"></i>
+                    <span>BE SEEN. BE TRUSTED.<br>BE PREFERRED.</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ALL MEMBERS ALSO ENJOY -->
+    <section class="all-members-section">
+        <div class="section-title-divider">
+            <span></span>
+            <h3>ALL MEMBERS ALSO ENJOY</h3>
+            <span></span>
+        </div>
+
+        <div class="perks-grid">
+            <div class="perk-box">
+                <i class="fa-solid fa-globe"></i>
+                <p>Access to Business Opportunities Across Africa</p>
+            </div>
+            <div class="perk-box">
+                <i class="fa-solid fa-shield-halved"></i>
+                <p>Verified Business Network & Trusted Connections</p>
+            </div>
+            <div class="perk-box">
+                <i class="fa-solid fa-laptop"></i>
+                <p>Member-Only Content, Tools & Market Insights</p>
+            </div>
+            <div class="perk-box">
+                <i class="fa-solid fa-calendar-days"></i>
+                <p>Invitations to Virtual & In-Person Events</p>
+            </div>
+            <div class="perk-box">
+                <i class="fa-solid fa-bullhorn"></i>
+                <p>Promote Your Business to a Pan-African Audience</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOTTOM CTA -->
+    <section class="cta-section">
+        <div class="cta-left">
+            <h2>AFRICA IS BIGGER<br><span>TOGETHER.</span></h2>
+            <p>Join AGBN and unlock access to markets, opportunities, partners and capital across the continent.</p>
+        </div>
+
+        <div class="cta-center-map">
+            <i class="fa-solid fa-earth-africa" style="font-size: 8rem; color: #cca43b;"></i>
+        </div>
+
+        <div class="cta-right">
+            <h2>JOIN AGBN TODAY</h2>
+            <p>AND TAKE YOUR BUSINESS BEYOND BORDERS.</p>
+
+            <div class="bottom-steps">
+                <div class="step-item">
+                    <div class="step-icon"><i class="fa-solid fa-users"></i></div>
+                    <span>CONNECT.</span>
+                </div>
+                <div class="step-item">
+                    <div class="step-icon"><i class="fa-solid fa-handshake"></i></div>
+                    <span>REFER.</span>
+                </div>
+                <div class="step-item">
+                    <div class="step-icon"><i class="fa-solid fa-dollar-sign"></i></div>
+                    <span>EARN.</span>
+                </div>
+                <div class="step-item">
+                    <div class="step-icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <span>GROW.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STRIP FOOTER -->
+    <div class="yellow-footer-strip">
+        <div class="strip-left">
+            <a href="https://www.agbnworld.com" target="_blank"><i class="fa-solid fa-globe"></i> www.agbnworld.com</a>
+        </div>
+        <div class="strip-center">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            <span>AGBN WORLD</span>
+        </div>
+        <div class="strip-right">
+            Building Africa's Most Trusted Business Network
+        </div>
+    </div>
+
+    <!-- FOOTER (Retained unchanged as requested) -->
+    <footer class="footer">
         <div class="footer-container">
-
-            <!-- Logo & About -->
             <div class="footer-block">
-                <img src="./images/logos.png" alt="AGBN Logo" class="footer-logo">
-                <p>
-                    Africa's largest opportunity-sharing ecosystem where
-                    connections become partnerships and opportunities become income.
-                </p>
+                <h5>ABOUT AGBN</h5>
+                <p>Africa & Global Business Network connects entrepreneurs, investors, and business leaders across 54 African countries and globally to drive economic expansion and sustainable growth.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </div>
             </div>
 
-            <!-- Quick Links -->
             <div class="footer-block">
                 <h5>QUICK LINKS</h5>
                 <ul>
-                    <li><a href="./index.html">Home</a></li>
-                    <li><a href="./opportunities.html">Opportunities</a></li>
-                    <li><a href="./about.html">About Us</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </div>
 
-            <!-- Resources -->
             <div class="footer-block">
-                <h5>RESOURCES</h5>
+                <h5>MEMBERSHIP</h5>
                 <ul>
-                    <li><a href="./events.html">Events</a></li>
-                    <li><a href="https://forms.gle/jRorKfWYr3iCk9Wu8" target="_blank" rel="noopener noreferrer">Membership</a></li>
+                    <li><a href="#">Africa Connect</a></li>
+                    <li><a href="#">Africa Grow</a></li>
+                    <li><a href="#">Africa Elite</a></li>
+                    <li><a href="#">Directory</a></li>
+                    <li><a href="#">Investment Desk</a></li>
                 </ul>
             </div>
 
-            <!-- Social Links -->
             <div class="footer-block">
-                <h5>STAY CONNECTED</h5>
-                <div class="social-icons">
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/africa_global_business_network/" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" aria-label="X"><i class="fab fa-x-twitter"></i></a>
-                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                </div>
+                <h5>CONTACT INFO</h5>
+                <p><i class="fa-solid fa-envelope"></i> info@agbnworld.com</p>
+                <p><i class="fa-solid fa-globe"></i> www.agbnworld.com</p>
+                <p><i class="fa-solid fa-location-dot"></i> Pan-African Network Services</p>
             </div>
-
         </div>
 
         <hr>
 
         <div class="footer-bottom">
-            <p>© 2026 Africa & Global Business Network (AGBN). All rights reserved.</p>
-            <p>Building Connections. Awarding Referrals.</p>
+            <p>&copy; 2026 AGBN World. All Rights Reserved.</p>
+            <p>Building Africa's Most Trusted Business Network</p>
         </div>
     </footer>
 
-    <script src="./js/script.js"></script>
 </body>
 </html>
